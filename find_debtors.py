@@ -26,12 +26,10 @@ def normalize_name(name):
 def extract_invoice_number(description):
     """Extract invoice number from various description formats"""
     patterns = [
-        r'Arve nr[.: ]*(\d+)',
-        r'ARVE NR[.: ]*(\d+)',
-        r'Arve number[.: ]*(\d+)',
-        r'ARVE[.: ]*(\d+)',
-        r'Arve[.: ]*(\d+)',
-        r'Tasumine arve[.: ]*(\d+)',
+        r'(?i)arve nr[.: ]*(\d+)',
+        r'(?i)arve number[.: ]*(\d+)', 
+        r'(?i)arve[.: ]*(\d+)',
+        r'(?i)tasumine arve[.: ]*(\d+)',
         r'.*?(\d+).*'  # Last resort - try to find any number
     ]
     
